@@ -3,15 +3,7 @@
  * Property of Gavin Abu-Zahra. Do not reproduce or distribute without explicit permission.
  */
 
-
-* {
-  margin: 0;
-}
-
-#canvas {
-  position: fixed;
-  height: 100vh;
-  width: 100vw;
-  top: 0;
-  left: 0;
+declare module "*.png" {
+  const value: string;
+  export default value;
 }

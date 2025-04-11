@@ -4,8 +4,13 @@
  */
 
 import './index.css';
+import Engine from "./engine";
+import {Player} from "./game/sprites/Player";
+import {SimpleShooter} from "./game/SimpleShooter";
 const canvas = document.getElementById("canvas") as HTMLCanvasElement;
 setInterval(() => {
   canvas.height = window.innerHeight;
   canvas.width = window.innerWidth;
-},150)
+} )
+
+const instance = new SimpleShooter(canvas);

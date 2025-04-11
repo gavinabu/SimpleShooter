@@ -1,3 +1,8 @@
+/*
+ * © 2021-2025 JustWhatever. All rights reserved.
+ * Property of Gavin Abu-Zahra. Do not reproduce or distribute without explicit permission.
+ */
+
 import type { ModuleOptions } from 'webpack';
 
 export const rules: Required<ModuleOptions>['rules'] = [
@@ -27,5 +32,9 @@ export const rules: Required<ModuleOptions>['rules'] = [
         transpileOnly: true,
       },
     },
+  },
+  {
+    test: /\.(png|svg|jpg|jpeg|gif)$/i,
+    type: 'asset/resource',
   },
 ];

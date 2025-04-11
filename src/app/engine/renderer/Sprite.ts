@@ -4,14 +4,17 @@
  */
 
 import {DisplayProps} from "./index";
-import {TickEvent} from "../index";
+import Engine, {TickEvent} from "../index";
+import {Logger} from "../util/Logger";
 
 export interface SpriteInfo {
   name: string;
+  id: number;
 }
 
 export enum EventType {
-  "render"
+  "render",
+  "tick"
 }
 
 export interface SpriteEvent {
@@ -22,13 +25,16 @@ export interface SpriteEvent {
 export interface RenderEvent extends SpriteEvent {
   type: EventType.render;
   display: DisplayProps;
-  
+  engine: Engine;
 }
 
 export class Sprite {
-  protected name: string = "Unknown Sprite";
+  protected _name: string = "Unknown Sprite";
+  protected set name(name: string) {this._name = name; this.logger.name = name;}
   protected id: number;
   protected props: any;
+  protected logger: Logger = new Logger(this.name);
+  priority: number = 0;
   
   constructor(props: any, id: number) {
     this.id = id;
@@ -46,7 +52,8 @@ export class Sprite {
    */
   getInfo(): SpriteInfo {
     return {
-      name: this.name
+      name: this.name,
+      id: this.id
     }
   }
   
