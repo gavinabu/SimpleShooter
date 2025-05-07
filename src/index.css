@@ -1,0 +1,131 @@
+/*
+ * © 2021-2025 JustWhatever. All rights reserved.
+ * Property of Gavin Abu-Zahra. Do not reproduce or distribute without explicit permission.
+ */
+
+@font-face {
+  font-family: Rubik;
+  src: url("assets/fonts/Rubik/Rubik-VariableFont_wght.ttf") format("truetype");
+}
+
+* {
+  margin: 0;
+}
+
+canvas {
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+}
+
+.splash-beta {
+  background-color: #548AFF;
+  color: #ffffff;
+  z-index: 100;
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  font-family: Rubik;
+}
+.splash-beta > span.loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-grow: 1;
+  font-weight: 600;
+  font-size: 48px;
+}
+.splash-beta > span.version {
+  text-align: right;
+  font-weight: 500;
+  font-size: 12px;
+}
+
+.hud {
+  display: flex;
+  position: fixed;
+  flex-direction: column;
+  gap: 6px;
+  top: 6px;
+  left: 6px;
+  z-index: 1;
+}
+
+.hud > .debug {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  align-self: stretch;
+  flex-wrap: wrap;
+  width: 128px;
+}
+
+.hud > .debug > div {
+  display: flex;
+  width: 42px;
+  height: 25px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2px;
+  font-family: Rubik;
+  color: #000;
+  text-align: center;
+}
+
+.hud > .debug > div > span.label {
+  font-size: 7px;
+  font-weight: 600;
+}
+
+.hud > .debug > div > span.value {
+  font-size: 7px;
+  font-weight: 400;
+}
+
+.bar-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.bar-container > span {
+  font-family: Rubik;
+  font-size: 12px;
+  position: relative;
+  width: 126px;
+  left: 2px;
+}
+
+.bar-container > .bar {
+  width: 124px;
+  border-radius: 6px;
+  border: 2px solid #D9D9D9;
+  background: #BABABA;
+}
+
+.bar-container > .bar > .inner {
+  height: 100%;
+  border-radius: 4px;
+}
+
+.hotbar {
+  display: flex;
+  position: fixed;
+  flex-direction: column;
+  gap: 6px;
+  bottom: 6px;
+  left: 6px;
+  z-index: 1;
+}
+
+.hotbar > .weaponinfo {
+  display: flex;
+  gap: 2px;
+  flex-direction: column;
+  font-family: Rubik;
+}
